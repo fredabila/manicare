@@ -120,9 +120,13 @@ const FullFAQSection: React.FC = () => {
               </svg>
               Call Us Now
             </a>
-            <button className="btn-primary shadow-lg">
+            <a href="#" onClick={e => {
+              e.preventDefault();
+              const form = document.querySelector('form');
+              if (form) form.scrollIntoView({ behavior: 'smooth' });
+            }} className="btn-primary shadow-lg">
               Get Free Consultation
-            </button>
+            </a>
           </div>
         </div>
       </div>

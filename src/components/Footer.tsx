@@ -7,11 +7,12 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center mb-4">
+            <div className="flex items-center mb-0 pt-2 pb-2">
               <img 
-                src="/logo.png" 
+                src="/logo.svg" 
                 alt="Manicare Home Health Logo" 
-                className="h-40 w-auto"
+                className="h-36 w-36"
+                style={{marginTop: '-12px'}}
               />
             </div>
             <p className="text-mani-light-azure text-sm leading-relaxed mb-4 font-medium">
@@ -63,13 +64,13 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-1">
             <h4 className="brand-header text-mani-yellow mb-4 text-sm">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">HOME</a></li>
-              <li><a href="#services" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">OUR SERVICES</a></li>
-              <li><a href="#" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">ABOUT US</a></li>
-              <li><a href="#" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">CAREERS</a></li>
-              <li><a href="#" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">BLOG</a></li>
-              <li><a href="#" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">CONTACT</a></li>
-              <li><a href="#" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">GET FREE CONSULTATION</a></li>
+              <li><a href="/" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">HOME</a></li>
+              <li><a href="/#services" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">OUR SERVICES</a></li>
+              <li><a href="/about" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">ABOUT US</a></li>
+              <li><a href="/careers" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">CAREERS</a></li>
+              <li><a href="/blog" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">BLOG</a></li>
+              <li><a href="/contact" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">CONTACT</a></li>
+              <li><a href="/contact" className="text-mani-light-azure hover:text-mani-yellow transition-colors text-sm font-medium">GET FREE CONSULTATION</a></li>
             </ul>
           </div>
 

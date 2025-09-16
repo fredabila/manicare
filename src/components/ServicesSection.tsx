@@ -4,31 +4,31 @@ import ServiceModal from './ServiceModal';
 const services = [
   {
     title: 'Companion Care',
-    image: '/assets/companion-care.png',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDItmOsHRfuaTUPRhc1gK-geUjyvpF9IFtxZSxMKewsy7S3kHN2_zZuvObxNefPH8gbwJo0SAZrSzrFNUyqSpQLPIgWEjR7S7HAWCbKixMYtztaTLm23Fk4gc9Ndt8K2q4zm9HzmpfPGVdlyImG3j-eqW5zsbTsCKM6tphDN75FHKue9C36lj7TwdsyGEsAO7vQjSXBQBR8aOxn0VwoXtyYWXNpfreHSa4s5PJv89tRuXj_mqM1dT9E8t03ynP3vrvNWoyx_VvIK3A',
     shortDescription: 'Friendly support through conversation, companionship, and emotional connection.',
     fullDescription: 'Our companion care services provide friendly support through conversation, companionship, and emotional connection to help clients stay engaged, active, and connected. Whether it’s playing games, reading together, or accompanying clients on walks and outings, our team ensures that every day feels meaningful and uplifting.',
   },
   {
     title: 'Personal Care',
-    image: '/assets/personal-care.png',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBmUiH-omz3Pnz96d4JBz3OnzCwZ6C_6jVeAYVxGLiIjug_GRbqi6uRNm8jX2YGgyvj0pQ0TKRmN6oucfowtqdp_h23G9wtI_OH8I9nfCbrRXfRLE6Rw3629_RmPuVJ0ugP_SdnZbkDKFpTkXdTKrog96cIk7AarmT7UMoYe3yWb_njmj0Q5D_ztJOdQ2riR9UFzkQC5rfUf9DqyEhihLriBQmQ7uIfy1wkOcoKda29cvBrr2I2maZua2qRam6mgr0r79uLXoSqp5s',
     shortDescription: 'Support with daily living activities while promoting dignity and independence.',
     fullDescription: 'Our Personal Care services are designed to support daily living while promoting dignity, independence, and comfort. Our caregivers assist clients with essential activities such as bathing, grooming, dressing, toileting, mobility, and feeding.',
   },
   {
     title: 'Respite Care',
-    image: '/assets/respite-care.png',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuATd9Un_-M05hRXmoFnqjUv9lqv6_HitPNFdbFEvq_XrwdMLzRfsNnnc9X2HL_OBecUK8zQHaq7iW5cUd5bnBAryBLvv1VomIg-qvP4DQ7D8qITNT8Z7g8ww4UGBF-JsMfdrVoWgNsuwlF4yEjb9GjdEL4ZLX-Rv1PIY8S6WaXNwKC0tDm9gEpymmgZ24pNV8DZbgELUqjKdZGjCqplXBxcGbZBINrdm6gtrAqrskpGOzTyQLq5_TatW03x7XsxhfFqEy84vZuChhM',
     shortDescription: 'Giving family caregivers a chance to rest and recharge.',
     fullDescription: 'Caring for a loved one is rewarding, but it can also be physically and emotionally demanding. Our Respite Care services give family caregivers the chance to rest, recharge, or attend to personal responsibilities while knowing their loved one is in safe hands. Whether you need a few hours a week, overnight support, or extended coverage, our trained caregivers are available to help.',
   },
   {
     title: 'Homemaking',
-    image: '/assets/homemaking.png',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBupkVBOzjXCrdKbztcxZpp6zJCIELEklaVb6bqM8zTBCihdOceOguCjbyTY-fiNMrqmYmZGpWU6RGyEJnu6XIy5L67okk_9usDFDVxabezEHwNV-mIS7QZSwrVR-Tt0N4rBvnxtLG_W8J53ijswLR4onc_cJhYJbDhWF9t9dJit2YzMU509S7-rzFBBNF5TfitROSB1MAtYdIav3WT1YyJekwBL57G7PQ_tt75LFr-SuR7MA0G8_UaUNbauUfQWdJF54QwwyrG8N0',
     shortDescription: 'Helping clients maintain a clean, safe, and organized home.',
     fullDescription: 'Our homemaking services help clients maintain a clean, safe, and organized home environment. From light housekeeping and laundry to meal preparation and errands, we provide support that makes daily life easier and more comfortable for you or your loved ones.',
   },
   {
     title: 'Live-In/24-Hour Care',
-    image: '/assets/live-in-care.png',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAlk8AK6-xEx8Bh_wB8Q6eLGQle1AuLO6OatWmM_QBTV_qf12zopjVQi_9TtOCbAfR-oecLsudGqTmgMXsBrjj-G9M4Kov0JXhS0JUC_-vys6AYN-hqRbp2Y5FyJJqdopYeV4imvb4udQKrDD31XAjg0uezJN2HMFrniGmYHoRiK8ufv2k7nk2M-A0D1SHAQpykVtYaB4bVZKfMbTHsK6UcngqEK2Gc1jE0Jip5qH7UPlKS_sHCAfUGETORE-3yCB2gwpGSeiUL1hw',
     shortDescription: 'Continuous support for clients who need round-the-clock assistance.',
     fullDescription: 'For clients who need continuous support, Manicare Home Health offers reliable live-in and 24-hour care services. Our trained caregivers remain in the home to provide round-the-clock assistance with personal care, mobility, medication reminders, meal preparation, and companionship.',
   },
@@ -64,8 +64,9 @@ const ServicesSection: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-mani-azure/20 to-mani-dark-azure/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
               </div>
-              <div className="p-4 bg-white group-hover:bg-mani-light-azure transition-colors duration-300">
-                <h3 className="text-lg font-semibold text-mani-dark-blue text-center group-hover:text-mani-azure transition-colors duration-300">{service.title}</h3>
+              <div className="p-4 bg-white group-hover:bg-mani-light-azure transition-colors duration-300 flex flex-col items-center">
+                <h3 className="text-lg font-extrabold text-mani-dark-blue text-center group-hover:text-mani-azure transition-colors duration-300 mb-2 underline decoration-mani-yellow decoration-2">{service.title}</h3>
+                <button className="mt-1 px-4 py-2 bg-mani-yellow text-mani-dark-blue rounded-full font-semibold text-xs shadow hover:bg-mani-yellow-secondary transition-colors duration-200">Learn More</button>
               </div>
             </div>
           ))}

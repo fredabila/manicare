@@ -10,7 +10,7 @@ const BlogPage: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-bold brand-header text-mani-yellow mb-6">
             Manicare Blog
           </h1>
-          <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto px-4 py-3 rounded-xl bg-black/40 text-white shadow-md backdrop-blur-sm">
             Stay informed with the latest insights on home healthcare, wellness tips, and caregiving guidance from our expert team.
           </p>
         </div>

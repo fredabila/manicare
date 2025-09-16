@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 
 const faqTeasers = [
   {
-    question: "What services does Manicare Home Health provide?",
+    question: "What services does Manicare provide?",
     answer: "We offer a wide range of services, including personal care, companion care, respite care, live-in/24-hour care, and homemaking services: all tailored to meet the unique needs of each client."
-  },
-  {
-    question: "Are your caregivers licensed and trained?",
-    answer: "Yes. All our caregivers are carefully screened, trained, licensed or certified as required, and undergo background checks to ensure safety, professionalism, and quality care."
   },
   {
     question: "How quickly can services start?",
     answer: "In most cases, services can begin within 12-24 hours after the initial assessment and care plan approval."
+  },
+  {
+    question: "Do you provide CHHA training and certification?",
+    answer: "Yes. Manicare Home Health offers Certified Home Health Aide (CHHA) training programs approved in New Jersey. We provide classroom instruction, hands-on training, and certification preparation to help individuals start a rewarding career in home health care. Click HERE."
   }
 ];
 
