@@ -52,7 +52,7 @@ const Header: React.FC = () => {
             <img 
               src="/logo.svg" 
               alt="Manicare Home Health Logo" 
-              className="h-24 w-auto max-w-[300px] transition-transform group-hover:scale-105 ml-0 object-contain"
+              className="h-20 w-auto max-w-[200px] transition-transform group-hover:scale-105 ml-0 object-contain"
               style={{marginLeft: 0, paddingLeft: 0}}
             />
           </Link>
