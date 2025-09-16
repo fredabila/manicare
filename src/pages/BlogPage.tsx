@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlogPage: React.FC = () => {
   return (
-    <div className="bg-gray-50">
+  <div className="bg-mani-dark-blue">
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-mani-dark-azure to-mani-dark-blue text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-black opacity-20"></div>

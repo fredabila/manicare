@@ -9,6 +9,27 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   // Scroll to services section after navigation
+  const [servicesActive, setServicesActive] = React.useState(false);
+
+  React.useEffect(() => {
+    if (currentPath === '/') {
+      const handleScroll = () => {
+        const el = document.getElementById('services');
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          setServicesActive(rect.top <= 80 && rect.bottom > 80);
+        } else {
+          setServicesActive(false);
+        }
+      };
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+      return () => window.removeEventListener('scroll', handleScroll);
+    } else {
+      setServicesActive(false);
+    }
+  }, [currentPath]);
+
   const handleServicesClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (currentPath !== '/') {
@@ -24,14 +45,14 @@ const Header: React.FC = () => {
     setMobileMenuOpen(false);
   };
   return (
-  <header className="bg-mani-dark-azure text-white w-full shadow-lg sticky top-0 z-50">
+  <header className="text-white w-full shadow-lg sticky top-0 z-50" style={{backgroundColor: '#0c1929'}}>
       <div className="w-full p-0 m-0">
-        <div className="flex items-center justify-between h-16 w-full m-0 p-0">
+  <div className="flex items-center justify-between h-24 w-full m-0 p-0 pr-6">
           <Link to="/" className="flex items-center group ml-0">
             <img 
               src="/logo.svg" 
               alt="Manicare Home Health Logo" 
-              className="h-12 w-auto max-w-[160px] transition-transform group-hover:scale-105 ml-0 object-contain"
+              className="h-24 w-auto max-w-[300px] transition-transform group-hover:scale-105 ml-0 object-contain"
               style={{marginLeft: 0, paddingLeft: 0}}
             />
           </Link>
@@ -51,8 +72,8 @@ const Header: React.FC = () => {
             </div>
           </div>
           <nav className="hidden lg:flex items-center space-x-6">
-            <Link to="/" className={`text-sm font-medium transition-colors ${currentPath === '/' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`}>HOME</Link>
-            <a href="#services" className="text-sm font-medium text-white hover:text-mani-yellow transition-colors" onClick={handleServicesClick}>SERVICES</a>
+            <Link to="/" className={`text-sm font-medium transition-colors ${currentPath === '/' && !servicesActive ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`}>HOME</Link>
+            <a href="#services" className={`text-sm font-medium transition-colors ${servicesActive ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={handleServicesClick}>SERVICES</a>
             <Link to="/about" className={`text-sm font-medium transition-colors ${currentPath === '/about' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`}>ABOUT US</Link>
             <Link to="/careers" className={`text-sm font-medium transition-colors ${currentPath === '/careers' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`}>CAREERS</Link>
             <Link to="/blog" className={`text-sm font-medium transition-colors ${currentPath === '/blog' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`}>BLOG</Link>
@@ -79,7 +100,7 @@ const Header: React.FC = () => {
           <div className="lg:hidden absolute top-16 left-0 w-full z-50 bg-mani-dark-azure shadow-xl animate-slide-down">
             <div className="flex flex-col items-center py-8 space-y-6">
               <Link to="/" className={`text-lg font-bold transition-colors ${currentPath === '/' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={() => setMobileMenuOpen(false)}>HOME</Link>
-              <a href="#services" className="text-lg font-bold text-white hover:text-mani-yellow transition-colors" onClick={handleServicesClick}>SERVICES</a>
+              <a href="#services" className={`text-lg font-bold transition-colors ${servicesActive ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={handleServicesClick}>SERVICES</a>
               <Link to="/about" className={`text-lg font-bold transition-colors ${currentPath === '/about' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={() => setMobileMenuOpen(false)}>ABOUT US</Link>
               <Link to="/careers" className={`text-lg font-bold transition-colors ${currentPath === '/careers' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={() => setMobileMenuOpen(false)}>CAREERS</Link>
               <Link to="/blog" className={`text-lg font-bold transition-colors ${currentPath === '/blog' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={() => setMobileMenuOpen(false)}>BLOG</Link>

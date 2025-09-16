@@ -4,7 +4,7 @@ import ServiceModal from './ServiceModal';
 const services = [
   {
     title: 'Companion Care',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDItmOsHRfuaTUPRhc1gK-geUjyvpF9IFtxZSxMKewsy7S3kHN2_zZuvObxNefPH8gbwJo0SAZrSzrFNUyqSpQLPIgWEjR7S7HAWCbKixMYtztaTLm23Fk4gc9Ndt8K2q4zm9HzmpfPGVdlyImG3j-eqW5zsbTsCKM6tphDN75FHKue9C36lj7TwdsyGEsAO7vQjSXBQBR8aOxn0VwoXtyYWXNpfreHSa4s5PJv89tRuXj_mqM1dT9E8t03ynP3vrvNWoyx_VvIK3A',
+    image: 'https://www.firstlighthomecare.com/wp-content/uploads/2023/11/firstlight-companion-care-970x843.jpg',
     shortDescription: 'Friendly support through conversation, companionship, and emotional connection.',
     fullDescription: 'Our companion care services provide friendly support through conversation, companionship, and emotional connection to help clients stay engaged, active, and connected. Whether it’s playing games, reading together, or accompanying clients on walks and outings, our team ensures that every day feels meaningful and uplifting.',
   },
@@ -16,7 +16,7 @@ const services = [
   },
   {
     title: 'Respite Care',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuATd9Un_-M05hRXmoFnqjUv9lqv6_HitPNFdbFEvq_XrwdMLzRfsNnnc9X2HL_OBecUK8zQHaq7iW5cUd5bnBAryBLvv1VomIg-qvP4DQ7D8qITNT8Z7g8ww4UGBF-JsMfdrVoWgNsuwlF4yEjb9GjdEL4ZLX-Rv1PIY8S6WaXNwKC0tDm9gEpymmgZ24pNV8DZbgELUqjKdZGjCqplXBxcGbZBINrdm6gtrAqrskpGOzTyQLq5_TatW03x7XsxhfFqEy84vZuChhM',
+    image: 'https://www.cranehomecare.com/wp-content/uploads/2021/01/Respite-Care.jpg',
     shortDescription: 'Giving family caregivers a chance to rest and recharge.',
     fullDescription: 'Caring for a loved one is rewarding, but it can also be physically and emotionally demanding. Our Respite Care services give family caregivers the chance to rest, recharge, or attend to personal responsibilities while knowing their loved one is in safe hands. Whether you need a few hours a week, overnight support, or extended coverage, our trained caregivers are available to help.',
   },
