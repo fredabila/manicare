@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Manicare Brand Colors */
+  --mani-dark-blue: #0c1929;
+  --mani-dark-azure: #10416e;
+  --mani-azure: #1d5981;
+  --mani-light-azure: #f4faff;
+  --mani-yellow-primary: #fec900;
+  --mani-yellow-secondary: #ffd800;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--mani-dark-blue);
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Brand Typography Classes */
+  .brand-header {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .brand-subheader {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+  }
+  
+  /* Brand Color Classes */
+  .bg-mani-dark-blue { background-color: var(--mani-dark-blue); }
+  .bg-mani-dark-azure { background-color: var(--mani-dark-azure); }
+  .bg-mani-azure { background-color: var(--mani-azure); }
+  .bg-mani-light-azure { background-color: var(--mani-light-azure); }
+  .bg-mani-yellow { background-color: var(--mani-yellow-primary); }
+  .bg-mani-yellow-secondary { background-color: var(--mani-yellow-secondary); }
+  
+  .text-mani-dark-blue { color: var(--mani-dark-blue); }
+  .text-mani-dark-azure { color: var(--mani-dark-azure); }
+  .text-mani-azure { color: var(--mani-azure); }
+  .text-mani-light-azure { color: var(--mani-light-azure); }
+  .text-mani-yellow { color: var(--mani-yellow-primary); }
+  .text-mani-yellow-secondary { color: var(--mani-yellow-secondary); }
+  
+  .border-mani-yellow { border-color: var(--mani-yellow-primary); }
+  .border-mani-azure { border-color: var(--mani-azure); }
+  
+  /* Brand Button Styles */
+  .btn-primary {
+    background-color: var(--mani-yellow-primary);
+    color: var(--mani-dark-blue);
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--mani-yellow-secondary);
+    transform: translateY(-1px);
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--mani-azure);
+    border: 2px solid var(--mani-azure);
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--mani-azure);
+    color: white;
+  }
+}
