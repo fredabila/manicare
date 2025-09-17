@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const CareersPage: React.FC = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+
+  useEffect(() => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+    const onLoad = () => {
+      // When the hidden iframe finishes loading, show success
+      setSubmitted(true);
+      // auto-hide after 6s
+      setTimeout(() => setSubmitted(false), 6000);
+    };
+    iframe.addEventListener('load', onLoad);
+    return () => iframe.removeEventListener('load', onLoad);
+  }, []);
+
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
@@ -108,50 +124,119 @@ const CareersPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold brand-header text-mani-dark-blue">Ready to Join Our Team?</h2>
             <p className="mt-4 text-lg text-gray-600">
-              Fill out the form below to start your application process.
+              Fill out the registration form below to start your application process.
             </p>
           </div>
-          <form className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+          <form
+            className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSf-U_wFlDFF1PiKNzSG_ODu9AzfER0EfCy6eoNbd5rngSTHqQ/formResponse"
+            method="POST"
+            target="hidden_iframe"
+            onSubmit={(e) => {
+              // Prevent navigating away. Submit the form to the hidden iframe so the
+              // Google Forms POST happens in the background, then also POST to our API.
+              e.preventDefault();
+              try {
+                const form = e.currentTarget as HTMLFormElement;
+                const fullName = (form.querySelector('#full-name') as HTMLInputElement)?.value || '';
+                const phone = (form.querySelector('#phone') as HTMLInputElement)?.value || '';
+                const email = (form.querySelector('#email') as HTMLInputElement)?.value || '';
+                const position = (form.querySelector('#position') as HTMLSelectElement)?.value || '';
+                const message = (form.querySelector('#message') as HTMLTextAreaElement)?.value || '';
+
+                // ensure the position is sent as plain text: set hidden input value to selected position
+                const positionHidden = document.getElementById('entry-280374718') as HTMLInputElement | null;
+                if (positionHidden) {
+                  positionHidden.value = position;
+                }
+
+                // submit to Google Forms via the form element targeting the hidden iframe
+                // this keeps the main window from redirecting
+                // note: this triggers the form action (formResponse URL) into the iframe
+                form.submit();
+
+                // show a local success UI immediately as a friendly UX (we also rely on iframe load)
+                setSubmitted(true);
+                setTimeout(() => setSubmitted(false), 6000);
+
+                // fire-and-forget JSON POST to our email API; also show success when it completes
+                fetch('/api/send-email', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    name: fullName,
+                    phone,
+                    email,
+                    position,
+                    message,
+                  }),
+                })
+                  .then(() => {
+                    setSubmitted(true);
+                    setTimeout(() => setSubmitted(false), 6000);
+                  })
+                  .catch((err) => console.error('Careers form email error', err));
+              } catch (err) {
+                console.error('Error preparing Careers form payload', err);
+              }
+            }}
+          >
+            {/* Hidden inputs for Google Form fields (keep constants if needed) */}
+            <input type="hidden" name="entry.280374718" id="entry-280374718" value="" />
             <div className="sm:col-span-2">
               <label htmlFor="full-name" className="block text-sm font-medium text-gray-700">Name</label>
               <div className="mt-1">
-                <input type="text" name="full-name" id="full-name" autoComplete="name" className="py-3 px-4 block w-full shadow-sm focus:ring-mani-yellow focus:border-mani-yellow border-gray-300 rounded-md" placeholder="Your Full Name" />
+                <input type="text" name="entry.1926683995" id="full-name" autoComplete="name" className="py-3 px-4 block w-full shadow-sm focus:ring-mani-yellow focus:border-mani-yellow border-gray-300 rounded-md" placeholder="Your Full Name" />
               </div>
             </div>
             <div>
               <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone</label>
               <div className="mt-1">
-                <input type="text" name="phone" id="phone" autoComplete="tel" className="py-3 px-4 block w-full shadow-sm focus:ring-mani-yellow focus:border-mani-yellow border-gray-300 rounded-md" placeholder="(123) 456-7890" />
+                  <input type="text" name="entry.1265675249" id="phone" autoComplete="tel" className="py-3 px-4 block w-full shadow-sm focus:ring-mani-yellow focus:border-mani-yellow border-gray-300 rounded-md" placeholder="(123) 456-7890" />
               </div>
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
               <div className="mt-1">
-                <input id="email" name="email" type="email" autoComplete="email" className="py-3 px-4 block w-full shadow-sm focus:ring-mani-yellow focus:border-mani-yellow border-gray-300 rounded-md" placeholder="you@example.com" />
+                <input id="email" name="entry.1252002960" type="email" autoComplete="email" className="py-3 px-4 block w-full shadow-sm focus:ring-mani-yellow focus:border-mani-yellow border-gray-300 rounded-md" placeholder="you@example.com" />
               </div>
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="position" className="block text-sm font-medium text-gray-700">Position Applying For</label>
               <div className="mt-1">
-                <select id="position" name="position" className="py-3 px-4 block w-full shadow-sm focus:ring-mani-yellow focus:border-mani-yellow border-gray-300 rounded-md bg-white">
-                  <option>CHHA (Certified Home Health Aide)</option>
-                  <option>Companion</option>
-                  <option>RN (Registered Nurse)</option>
+                <select id="position" className="py-3 px-4 block w-full shadow-sm focus:ring-mani-yellow focus:border-mani-yellow border-gray-300 rounded-md bg-white">
+                  <option value="CHHA (Certified Home Health Aide)">CHHA (Certified Home Health Aide)</option>
+                  <option value="Companion">Companion</option>
+                  <option value="RN (Registered Nurse)">RN (Registered Nurse)</option>
                 </select>
               </div>
             </div>
-            <div className="sm:col-span-2">
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-              <div className="mt-1">
-                <textarea id="message" name="message" rows={4} className="py-3 px-4 block w-full shadow-sm focus:ring-mani-yellow focus:border-mani-yellow border-gray-300 rounded-md" placeholder="Tell us a little about yourself..."></textarea>
+              <div className="sm:col-span-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                <div className="mt-1">
+                  <textarea id="message" name="entry.1904084952" rows={4} className="py-3 px-4 block w-full shadow-sm focus:ring-mani-yellow focus:border-mani-yellow border-gray-300 rounded-md" placeholder="Tell us a little about yourself..."></textarea>
+                </div>
               </div>
-            </div>
             <div className="sm:col-span-2 text-center">
               <button type="submit" className="btn-primary w-full sm:w-auto">
-                Apply Now
+                SUBMIT
               </button>
             </div>
           </form>
+          {/* Hidden iframe to receive the Google Forms response so the page doesn't navigate */}
+          <iframe ref={iframeRef} name="hidden_iframe" style={{ display: 'none' }} title="hidden_iframe"></iframe>
+
+          {/* Success banner */}
+          {submitted && (
+            <div className="mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+              <div className="flex items-center">
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="font-medium">Thank you! Your application has been submitted successfully. We'll contact you soon.</span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

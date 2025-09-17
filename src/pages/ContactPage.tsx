@@ -31,7 +31,30 @@ const ContactPage: React.FC = () => {
                 action="https://docs.google.com/forms/d/e/1FAIpQLSfzqVQHW9pD_TF7FKl1CuY8ea-poZ1HyVWyM1kTH9Xzay9eaQ/formResponse" 
                 method="POST" 
                 target="hidden_iframe" 
-                onSubmit={() => {
+                onSubmit={(e) => {
+                  // keep existing iframe-based Google Forms submit for compatibility
+                  // also send JSON payload to our serverless email endpoint
+                  try {
+                    const form = e.currentTarget as HTMLFormElement;
+                    const name = (form.querySelector('#name') as HTMLInputElement)?.value || '';
+                    const phone = (form.querySelector('#phone') as HTMLInputElement)?.value || '';
+                    const email = (form.querySelector('#email') as HTMLInputElement)?.value || '';
+                    const message = (form.querySelector('#message') as HTMLTextAreaElement)?.value || '';
+
+                    // fire-and-forget POST to our API; show success only on client-side after a short delay
+                    fetch('/api/send-email', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ name, phone, email, message })
+                    }).catch((err) => {
+                      // swallow errors; we still rely on Google Forms as primary delivery
+                      console.error('Error sending to /api/send-email', err);
+                    });
+                  } catch (err) {
+                    console.error('Error preparing email payload', err);
+                  }
+
+                  // existing success message behavior (keeps showing the message after Google Forms submit)
                   setTimeout(() => {
                     const successMessage = document.getElementById('success-message');
                     if (successMessage) {

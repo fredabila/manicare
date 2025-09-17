@@ -7,12 +7,14 @@ const BlogPage: React.FC = () => {
       <div className="relative bg-gradient-to-br from-mani-dark-azure to-mani-dark-blue text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="relative max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold brand-header text-mani-yellow mb-6">
-            Manicare Blog
-          </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto px-4 py-3 rounded-xl bg-black/40 text-white shadow-md backdrop-blur-sm">
-            Stay informed with the latest insights on home healthcare, wellness tips, and caregiving guidance from our expert team.
-          </p>
+          <div className="backdrop-blur-sm bg-white/10 rounded-2xl p-8 md:p-12 shadow-2xl border border-white/20 inline-block">
+            <h1 className="text-3xl md:text-5xl font-bold brand-header text-mani-yellow leading-tight mb-6">
+              Manicare Blog
+            </h1>
+            <p className="text-lg md:text-xl max-w-2xl mx-auto px-0 py-0 text-white">
+              Stay informed with the latest insights on home healthcare, wellness tips, and caregiving guidance from our expert team.
+            </p>
+          </div>
         </div>
       </div>
 
