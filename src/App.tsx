@@ -8,6 +8,12 @@ import HomePage from './pages/HomePage'
 import CareersPage from './pages/CareersPage'
 import AboutPage from './pages/AboutPage'
 import BlogPage from './pages/BlogPage'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+import TermsConditionsPage from './pages/TermsConditionsPage'
+import ServiceRefundPolicyPage from './pages/ServiceRefundPolicyPage'
+import NonDiscriminationPage from './pages/NonDiscriminationPage'
+import HIPAAPrivacyStatementPage from './pages/HIPAAPrivacyStatementPage'
+import PatientRightsResponsibilitiesPage from './pages/PatientRightsResponsibilitiesPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -21,7 +27,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen w-full overflow-x-clip">
+      <div className="min-h-screen w-full overflow-x-clip pb-20 md:pb-0">
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -29,6 +35,12 @@ function App() {
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-conditions" element={<TermsConditionsPage />} />
+          <Route path="/service-refund-policy" element={<ServiceRefundPolicyPage />} />
+          <Route path="/non-discrimination" element={<NonDiscriminationPage />} />
+          <Route path="/hipaa-privacy-statement" element={<HIPAAPrivacyStatementPage />} />
+          <Route path="/patient-rights-responsibilities" element={<PatientRightsResponsibilitiesPage />} />
         </Routes>
         <Footer />
       </div>

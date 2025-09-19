@@ -1,6 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const BlogPage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleExploreServices = () => {
+    navigate('/');
+    // Scroll to services section after navigation
+    setTimeout(() => {
+      const servicesElement = document.getElementById('services');
+      if (servicesElement) {
+        servicesElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   return (
   <div className="bg-mani-dark-blue">
       {/* Hero Section */}
@@ -69,9 +83,12 @@ const BlogPage: React.FC = () => {
               <a href="/contact" className="btn-primary">
                 Contact Us for Information
               </a>
-              <a href="/" className="bg-white text-mani-dark-azure px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 shadow-lg">
+              <button 
+                onClick={handleExploreServices}
+                className="bg-white text-mani-dark-azure px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+              >
                 Explore Our Services
-              </a>
+              </button>
             </div>
           </div>
 

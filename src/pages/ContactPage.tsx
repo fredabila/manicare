@@ -5,8 +5,17 @@ const ContactPage: React.FC = () => {
   return (
     <div className="w-full">
       {/* Hero Section for Contact Page */}
-      <div className="py-20" style={{background: 'linear-gradient(135deg, #10416e 0%, #1d5981 50%, #0c1929 100%)'}}>
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <div 
+        className="relative py-32 text-white"
+        style={{
+          backgroundImage: `linear-gradient(135deg, rgba(12, 25, 41, 0.85) 0%, rgba(16, 65, 110, 0.75) 50%, rgba(29, 89, 129, 0.85) 100%), url('https://content.tui.co.uk/adamtui/2021_10/6_14/4b834562-efa5-4aa9-ae3d-adb900ec2103/TUISTAFF_HR_RETAIL_F035WebOriginalCompressed.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-mani-dark-blue/60 via-transparent to-mani-dark-azure/40"></div>
+        <div className="relative max-w-4xl mx-auto px-4 text-center">
           <h1 className="brand-header text-4xl md:text-5xl mb-6" style={{color: '#fec900'}}>
             We are Just a Call Away
           </h1>
@@ -200,7 +209,7 @@ const ContactPage: React.FC = () => {
                       <div className="flex flex-col gap-0.5">
                         <p className="ml-0">Tuesday: 9:00 AM - 5:00 PM</p>
                         <p className="ml-0">Thursday: 9:00 AM - 5:00 PM</p>
-                        <p className="ml-0">Triday: 9:00 AM - 5:00 PM</p>
+                        <p className="ml-0">Friday: 9:00 AM - 5:00 PM</p>
                       </div>
                       <p className="text-sm text-mani-yellow font-bold mt-2">On-call support: 24/7</p>
                     </div>
@@ -221,7 +230,9 @@ const ContactPage: React.FC = () => {
       </div>
 
       {/* Full FAQ Section */}
-      <FullFAQSection />
+      <div id="faq">
+        <FullFAQSection />
+      </div>
     </div>
   );
 };

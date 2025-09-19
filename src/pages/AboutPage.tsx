@@ -1,4 +1,5 @@
 import React from 'react';
+import MeetOurTeamSection from '../components/MeetOurTeamSection';
 
 const AboutPage: React.FC = () => {
   return (
@@ -38,6 +39,9 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Meet Our Team Section */}
+      <MeetOurTeamSection />
 
       {/* Why Choose Us Section */}
       <div className="py-20 bg-white">
@@ -120,6 +124,22 @@ const AboutPage: React.FC = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Our Story Section */}
+      <div className="py-20 bg-mani-light-azure">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="brand-header text-3xl md:text-4xl text-mani-dark-blue mb-6">Our Story</h2>
+          </div>
+          <div className="bg-white rounded-xl shadow-lg p-8 md:p-12">
+            <div className="prose prose-lg max-w-none">
+              <p className="text-mani-dark-blue leading-relaxed text-lg font-medium text-center">
+                Manicare Home Health was founded on a simple belief: healing feels most natural at home. After more than ten years of caring for patients at the bedside, our founder, Emmanuel Yeboah, Family Nurse Practitioner, saw that many patients recovered better medically, emotionally, and physically in the comfort of their own homes, surrounded by their loved ones. With this experience in mind, Manicare Home Health was created to bring safe, compassionate, and personalized care directly to families where it matters most. Today, we are proud to be more than just caregivers, we are partners in your health journey. Our team walks with you and your loved ones toward greater strength, independence, and peace of mind.
+              </p>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const faqTeasers = [
   {
@@ -18,9 +18,21 @@ const faqTeasers = [
 
 const FAQTeaser: React.FC = () => {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
+  const navigate = useNavigate();
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const handleViewAllFAQs = () => {
+    navigate('/contact');
+    // Scroll to FAQ section after navigation
+    setTimeout(() => {
+      const faqElement = document.getElementById('faq');
+      if (faqElement) {
+        faqElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (
@@ -54,7 +66,9 @@ const FAQTeaser: React.FC = () => {
               </button>
               {openIndex === index && (
                 <div className="px-6 pb-4 bg-mani-light-azure/50">
-                  <p className="text-mani-dark-blue leading-relaxed font-medium">{faq.answer}</p>
+                  <div className="border-t border-mani-azure/30 pt-4">
+                    <p className="text-mani-dark-blue leading-relaxed font-medium">{faq.answer}</p>
+                  </div>
                 </div>
               )}
             </div>
@@ -62,12 +76,12 @@ const FAQTeaser: React.FC = () => {
         </div>
 
         <div className="text-center">
-          <Link 
-            to="/contact"
+          <button 
+            onClick={handleViewAllFAQs}
             className="btn-secondary inline-block shadow-lg"
           >
             View All FAQs
-          </Link>
+          </button>
         </div>
       </div>
     </div>

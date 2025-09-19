@@ -23,7 +23,7 @@ const CareersPage: React.FC = () => {
       <div 
         className="relative text-white py-24 px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center"
         style={{
-          backgroundImage: `linear-gradient(135deg, rgba(12, 25, 41, 0.85) 0%, rgba(16, 65, 110, 0.75) 50%, rgba(29, 89, 129, 0.85) 100%), url('/chha.png')`,
+          backgroundImage: `linear-gradient(135deg, rgba(12, 25, 41, 0.85) 0%, rgba(16, 65, 110, 0.75) 50%, rgba(29, 89, 129, 0.85) 100%), url('https://bhtherapygroup.com/wp-content/uploads/2022/10/Healthcare-Workers-scaled.jpeg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat'
