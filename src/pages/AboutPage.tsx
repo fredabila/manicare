@@ -8,7 +8,7 @@ const AboutPage: React.FC = () => {
       <div 
         className="relative text-white py-24 px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center"
         style={{
-          backgroundImage: `linear-gradient(135deg, rgba(12, 25, 41, 0.85) 0%, rgba(16, 65, 110, 0.75) 50%, rgba(29, 89, 129, 0.85) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuATd9Un_-M05hRXmoFnqjUv9lqv6_HitPNFdbFEvq_XrwdMLzRfsNnnc9X2HL_OBecUK8zQHaq7iW5cUd5bnBAryBLvv1VomIg-qvP4DQ7D8qITNT8Z7g8ww4UGBF-JsMfdrVoWgNsuwlF4yEjb9GjdEL4ZLX-Rv1PIY8S6WaXNwKC0tDm9gEpymmgZ24pNV8DZbgELUqjKdZGjCqplXBxcGbZBINrdm6gtrAqrskpGOzTyQLq5_TatW03x7XsxhfFqEy84vZuChhM')`,
+          backgroundImage: `linear-gradient(135deg, rgba(12, 25, 41, 0.85) 0%, rgba(16, 65, 110, 0.75) 50%, rgba(29, 89, 129, 0.85) 100%), url('https://media.istockphoto.com/id/1204177269/photo/portrait-of-multi-cultural-medical-team-standing-in-hospital-corridor.jpg?s=612x612&w=0&k=20&c=PR3ulMitMJnrYRpe12C95HWnLWvU15NP6QcLtxEQYJQ=')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat'
