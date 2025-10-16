@@ -82,7 +82,7 @@ const TermsConditionsPage: React.FC = () => {
               <h2 className="brand-header text-2xl text-mani-dark-blue mb-4 mt-8">9. Contact Us</h2>
               <div className="bg-mani-light-azure/50 p-6 rounded-lg">
                 <p className="text-mani-dark-blue font-medium mb-2">
-                  <strong>Email:</strong> <a href="mailto:manicarehh@gmail.com" className="text-mani-yellow hover:underline">manicarehh@gmail.com</a>
+                  <strong>Email:</strong> <a href="mailto:info@manicarehomehealth.com" className="text-mani-yellow hover:underline">info@manicarehomehealth.com</a>
                 </p>
                 <p className="text-mani-dark-blue font-medium">
                   <strong>Phone:</strong> <a href="tel:8482801168" className="text-mani-yellow hover:underline">(848) 280-1168</a>

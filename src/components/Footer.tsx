@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <span className="text-mani-light-azure text-sm font-medium">manicarehh@gmail.com</span>
+                <span className="text-mani-light-azure text-sm font-medium">info@manicarehomehealth.com</span>
               </div>
               <div className="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-mani-yellow" viewBox="0 0 20 20" fill="currentColor">
@@ -52,8 +52,8 @@ const Footer: React.FC = () => {
                 </svg>
                 <div className="text-mani-light-azure text-sm">
                   <p>Tuesday: 9:00 AM - 5:00 PM</p>
-                  <p>Thursday: 9:00 AM - 5:00 PM</p>
                   <p>Friday: 9:00 AM - 5:00 PM</p>
+                  <p>Saturday: 9:00 AM - 5:00 PM</p>
                   <p className="text-mani-yellow text-xs mt-1">On-call support: 24/7</p>
                 </div>
               </div>

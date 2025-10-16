@@ -191,8 +191,8 @@ const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-mani-dark-blue mb-1">Email</h3>
-                    <a href="mailto:manicarehh@gmail.com" className="text-mani-azure hover:text-mani-yellow font-medium transition-colors">
-                      manicarehh@gmail.com
+                    <a href="mailto:info@manicarehomehealth.com" className="text-mani-azure hover:text-mani-yellow font-medium transition-colors">
+                    info@manicarehomehealth.com
                     </a>
                   </div>
                 </div>
@@ -208,8 +208,8 @@ const ContactPage: React.FC = () => {
                     <div className="text-mani-azure font-medium">
                       <div className="flex flex-col gap-0.5">
                         <p className="ml-0">Tuesday: 9:00 AM - 5:00 PM</p>
-                        <p className="ml-0">Thursday: 9:00 AM - 5:00 PM</p>
                         <p className="ml-0">Friday: 9:00 AM - 5:00 PM</p>
+                        <p className="ml-0">Saturday: 9:00 AM - 5:00 PM</p>
                       </div>
                       <p className="text-sm text-mani-yellow font-bold mt-2">On-call support: 24/7</p>
                     </div>

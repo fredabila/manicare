@@ -79,7 +79,7 @@ const PrivacyPolicyPage: React.FC = () => {
               <h2 className="brand-header text-2xl text-mani-dark-blue mb-4 mt-8">5. Your Rights</h2>
               <p className="text-mani-dark-blue leading-relaxed mb-6 font-medium">
                 You may request access, corrections, or copies of your health information by contacting us at
-                <a href="mailto:manicarehh@gmail.com" className="text-mani-yellow hover:underline"> manicarehh@gmail.com</a>.
+                <a href="mailto:info@manicarehomehealth.com" className="text-mani-yellow hover:underline"> info@manicarehomehealth.com</a>.
                 We will respond in accordance with HIPAA and state regulations.
               </p>
 
@@ -101,7 +101,7 @@ const PrivacyPolicyPage: React.FC = () => {
               </p>
               <div className="bg-mani-light-azure/50 p-6 rounded-lg">
                 <p className="text-mani-dark-blue font-medium mb-2">
-                  <strong>Email:</strong> <a href="mailto:manicarehh@gmail.com" className="text-mani-yellow hover:underline">manicarehh@gmail.com</a>
+                  <strong>Email:</strong> <a href="mailto:info@manicarehomehealth.com" className="text-mani-yellow hover:underline">info@manicarehomehealth.com</a>
                 </p>
                 <p className="text-mani-dark-blue font-medium">
                   <strong>Phone:</strong> <a href="tel:8482801168" className="text-mani-yellow hover:underline">(848) 280-1168</a>
