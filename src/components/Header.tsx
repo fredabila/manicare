@@ -175,8 +175,7 @@ const Header: React.FC = () => {
         <button 
           className="flex flex-col items-center space-y-1 text-mani-dark-blue hover:text-mani-yellow transition-colors"
           onClick={() => {
-            // TODO: Implement messaging feature
-            console.log('Message feature coming soon');
+            SMARKETLY.toggleChatbot()
           }}
         >
           <div className="p-2 bg-mani-light-azure/20 rounded-full">
