@@ -25,9 +25,14 @@ const AboutPage: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <p className="text-lg text-white font-medium">
+              <a 
+                href="https://maps.google.com/maps?q=2165+Morris+Ave+Suite+15+Union+NJ+07083"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg text-white font-medium hover:text-mani-yellow transition-colors cursor-pointer"
+              >
                 2165 Morris Ave, Suite 15, Union, NJ 07083
-              </p>
+              </a>
             </div>
             <p className="text-gray-200 mb-4">We proudly serve families across New Jersey.</p>
             <blockquote className="border-l-4 border-mani-yellow pl-6">

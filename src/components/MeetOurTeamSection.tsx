@@ -3,19 +3,18 @@ import React from 'react';
 const teamMembers = [
   {
     name: "EMMANUEL YEBOAH, FNP-C",
-    title: "Director"
+    title: "Director/DON",
+    image: "/emmanuel.png"
   },
   {
     name: "NIKKI G. YEBOAH, BSC. CIS",
-    title: "Administrator"
+    title: "Administrator",
+    image: "/nikki.png"
   },
   {
-    name: "ANDRAE LACORTE, BSN, RN",
-    title: "Director of Nursing (DON)"
-  },
-  {
-    name: "ABEIKU GREENE, EMPA, NYU",
-    title: "Billing & Authorization Specialist"
+    name: "⁠Louis Asiamah",
+    title: "Compliance Officer",
+    image: "/louis.png"
   }
 ];
 
@@ -36,16 +35,23 @@ const MeetOurTeamSection: React.FC = () => {
               {/* Photo Frame */}
               <div className="mb-6">
                 <div className="w-48 h-48 mx-auto bg-white rounded-full border-4 border-mani-azure/30 shadow-lg flex items-center justify-center overflow-hidden">
-                  {/* Placeholder for photo */}
-                  <div className="w-full h-full bg-mani-light-azure/50 flex items-center justify-center">
-                    <svg 
-                      className="w-24 h-24 text-mani-azure/60" 
-                      fill="currentColor" 
-                      viewBox="0 0 20 20"
-                    >
-                      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-mani-light-azure/50 flex items-center justify-center">
+                      <svg
+                        className="w-24 h-24 text-mani-azure/60"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
               </div>
 

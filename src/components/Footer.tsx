@@ -21,11 +21,16 @@ const Footer: React.FC = () => {
             {/* Address */}
             <div className="mb-4">
               <h4 className="brand-header text-mani-yellow mb-2 text-sm">Our Location</h4>
-              <div className="text-mani-light-azure text-sm">
+              <a 
+                href="https://maps.google.com/maps?q=2165+Morris+Ave+Suite+15+Union+NJ+07083"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-mani-light-azure text-sm hover:text-mani-yellow transition-colors cursor-pointer"
+              >
                 <p>2165 Morris Ave, Suite 15</p>
                 <p>Union, NJ 07083</p>
                 <p>United States</p>
-              </div>
+              </a>
             </div>
           </div>
 

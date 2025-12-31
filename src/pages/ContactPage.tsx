@@ -162,10 +162,15 @@ const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-mani-dark-blue mb-1">Address</h3>
-                    <p className="text-mani-azure font-medium">
+                    <a 
+                      href="https://maps.google.com/maps?q=2165+Morris+Ave+Suite+15+Union+NJ+07083"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-mani-azure font-medium hover:text-mani-yellow transition-colors cursor-pointer"
+                    >
                       2165 Morris Ave, Suite 15<br />
                       Union, NJ 07083
-                    </p>
+                    </a>
                   </div>
                 </div>
 
