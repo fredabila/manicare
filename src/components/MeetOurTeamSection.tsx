@@ -12,7 +12,7 @@ const teamMembers = [
     image: "/nikki.png"
   },
   {
-    name: "⁠Louis Asiamah",
+    name: "⁠LOUIS ASIAMAH",
     title: "Compliance Officer",
     image: "/louis.png"
   }
