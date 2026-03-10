@@ -7,12 +7,17 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center mb-0 pt-2 pb-2">
+            <div className="flex items-center gap-4 mb-0 pt-2 pb-2">
               <img 
                 src="/logo.svg" 
                 alt="Manicare Home Health Logo" 
-                className="h-36 w-36"
+                className="h-32 w-32"
                 style={{marginTop: '-12px'}}
+              />
+              <img 
+                src="https://i.ibb.co/1Y7M26pv/CAHC-seal-removebg-preview.png" 
+                alt="CAHC Seal of Approval" 
+                className="h-20 w-auto"
               />
             </div>
             <p className="text-mani-light-azure text-sm leading-relaxed mb-4 font-medium">

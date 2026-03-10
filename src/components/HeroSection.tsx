@@ -55,6 +55,15 @@ const HeroSection: React.FC = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="max-w-3xl mx-auto px-4 text-center">
                   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20 inline-block">
+                    <div className="flex justify-center mb-4">
+                      <div className="bg-white p-2 rounded-full shadow-lg">
+                        <img 
+                          src="https://i.ibb.co/39qtwTt2/cahc-2-removebg-preview.png" 
+                          alt="CAHC Accredited" 
+                          className="h-16 md:h-20 w-auto"
+                        />
+                      </div>
+                    </div>
                     <h1 className="brand-header text-3xl md:text-4xl lg:text-5xl text-mani-yellow leading-tight">
                       {slide.text}
                     </h1>
