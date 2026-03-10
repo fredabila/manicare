@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-mani-azure/30 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-mani-light-azure text-sm font-medium">
-              © 2025 Manicare Home Healthcare. All rights reserved. Licensed in New Jersey.
+              © 2026 Manicare Home Healthcare. All rights reserved. Licensed in New Jersey.
             </p>
             <div className="flex items-center mt-4 md:mt-0">
               <span className="text-mani-light-azure text-xs mr-4 font-medium">Licensed • Insured • Bonded</span>
