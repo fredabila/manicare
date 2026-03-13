@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
               <img 
                 src="https://i.ibb.co/1Y7M26pv/CAHC-seal-removebg-preview.png" 
                 alt="CAHC Seal of Approval" 
-                className="h-28 w-auto"
+                className="h-40 w-auto"
               />
             </div>
             <p className="text-mani-light-azure text-sm leading-relaxed mb-4 font-medium">
