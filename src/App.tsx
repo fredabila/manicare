@@ -14,6 +14,7 @@ import ServiceRefundPolicyPage from './pages/ServiceRefundPolicyPage'
 import NonDiscriminationPage from './pages/NonDiscriminationPage'
 import HIPAAPrivacyStatementPage from './pages/HIPAAPrivacyStatementPage'
 import PatientRightsResponsibilitiesPage from './pages/PatientRightsResponsibilitiesPage'
+import HHATrainingPage from './pages/HHATrainingPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/careers" element={<CareersPage />} />
+          <Route path="/hha-training" element={<HHATrainingPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />

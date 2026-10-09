@@ -27,7 +27,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
 
-  const { name, phone, email, message, position } = req.body || {};
+  const { name, phone, email, message, position, formType } = req.body || {};
+  // HHA training applications reuse the application template with their own subject line
+  const isTrainingApplication = formType === 'hha-training';
 
   if (!name || !email || !message) {
     res.status(400).json({ success: false, error: "Missing required fields" });
@@ -122,7 +124,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const htmlBody = isApplication ? applicationHtml : contactHtml;
 
-  const subject = isApplication
+  const subject = isTrainingApplication
+    ? `HHA Training Application — ${safeName}`
+    : isApplication
     ? `Job Application: ${safePosition} — ${safeName}`
     : `New contact form submission from ${safeName}`;
 

@@ -76,6 +76,7 @@ const Header: React.FC = () => {
             <Link to="/" className={`text-sm font-medium transition-colors ${currentPath === '/' && !servicesActive ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`}>HOME</Link>
             <a href="#services" className={`text-sm font-medium transition-colors ${servicesActive ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={handleServicesClick}>SERVICES</a>
             <Link to="/about" className={`text-sm font-medium transition-colors ${currentPath === '/about' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`}>ABOUT US</Link>
+            <Link to="/hha-training" className={`text-sm font-medium transition-colors ${currentPath === '/hha-training' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`}>HHA TRAINING</Link>
             <Link to="/careers" className={`text-sm font-medium transition-colors ${currentPath === '/careers' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`}>CAREERS</Link>
             <Link to="/blog" className={`text-sm font-medium transition-colors ${currentPath === '/blog' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`}>BLOG</Link>
             <Link 
@@ -103,6 +104,7 @@ const Header: React.FC = () => {
               <Link to="/" className={`text-lg font-bold transition-colors ${currentPath === '/' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={() => setMobileMenuOpen(false)}>HOME</Link>
               <a href="#services" className={`text-lg font-bold transition-colors ${servicesActive ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={handleServicesClick}>SERVICES</a>
               <Link to="/about" className={`text-lg font-bold transition-colors ${currentPath === '/about' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={() => setMobileMenuOpen(false)}>ABOUT US</Link>
+              <Link to="/hha-training" className={`text-lg font-bold transition-colors ${currentPath === '/hha-training' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={() => setMobileMenuOpen(false)}>HHA TRAINING</Link>
               <Link to="/careers" className={`text-lg font-bold transition-colors ${currentPath === '/careers' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={() => setMobileMenuOpen(false)}>CAREERS</Link>
               <Link to="/blog" className={`text-lg font-bold transition-colors ${currentPath === '/blog' ? 'text-mani-yellow' : 'text-white hover:text-mani-yellow'}`} onClick={() => setMobileMenuOpen(false)}>BLOG</Link>
               <Link to="/contact" className={`btn-primary w-40 text-center ${currentPath === '/contact' ? 'ring-2 ring-mani-yellow' : ''}`} onClick={() => setMobileMenuOpen(false)}>Contact Us</Link>

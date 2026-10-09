@@ -8,6 +8,14 @@
     <priority>1.0</priority>
   </url>
   
+  <!-- HHA Training Page -->
+  <url>
+    <loc>https://manicarehomehealth.com/hha-training</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- About Page -->
   <url>
     <loc>https://manicarehomehealth.com/about</loc>
